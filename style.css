@@ -260,11 +260,22 @@ h1 {
 
 .event-photos {
   position: relative;
-  min-height: 330px;
+  min-height: 360px;
+}
+
+.event-photos::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -18px;
+  width: 1px;
+  height: 300px;
+  background: rgba(29, 37, 35, .22);
 }
 
 .photo {
   margin: 0;
+  overflow: hidden;
 }
 
 .photo img {
@@ -272,20 +283,24 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 1px solid rgba(29, 37, 35, .24);
-  filter: saturate(.9);
+  border: 0;
 }
 
-.photo figcaption {
-  margin-top: 9px;
+.event-photos span {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
   color: rgba(29, 37, 35, .68);
-  font-size: 12px;
-  letter-spacing: .12em;
+  font-size: 11px;
+  letter-spacing: .16em;
+  writing-mode: vertical-rl;
+  line-height: 1;
 }
 
 .speaker-photo {
-  width: 190px;
-  height: 220px;
+  width: 205px;
+  height: 262px;
+  filter: grayscale(1) contrast(1.04);
 }
 
 .speaker-photo img {
@@ -294,14 +309,16 @@ h1 {
 
 .food-photo {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 185px;
-  height: 146px;
+  right: 34px;
+  bottom: 32px;
+  width: 188px;
+  height: 106px;
+  box-shadow: -16px -16px 0 rgba(248, 245, 238, .92);
 }
 
 .food-photo img {
   object-position: center 58%;
+  filter: saturate(.86) contrast(.98);
 }
 
 .event-body h3 {
@@ -456,17 +473,17 @@ h1 {
   }
 
   .event-photos {
-    min-height: 220px;
+    min-height: 260px;
   }
 
   .speaker-photo {
     width: min(52vw, 220px);
-    height: 220px;
+    height: 240px;
   }
 
   .food-photo {
     width: min(48vw, 210px);
-    height: 150px;
+    height: 120px;
   }
 
   .event-meta {
