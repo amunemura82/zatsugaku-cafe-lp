@@ -121,11 +121,12 @@ nav {
 h1,
 h2,
 h3,
+h4,
 p {
   margin-top: 0;
   overflow-wrap: anywhere;
   word-break: normal;
-  line-break: anywhere;
+  line-break: strict;
 }
 
 h1 {
@@ -364,6 +365,7 @@ h1 {
   margin-top: 14px;
   font-size: clamp(20px, 2.4vw, 30px);
   line-height: 1.42;
+  overflow-wrap: anywhere;
 }
 
 .event-takeaways {
@@ -412,6 +414,33 @@ h1 {
   font-size: 13px;
   line-height: 1.45;
   font-weight: 700;
+}
+
+.event-intention {
+  margin-top: 22px;
+  padding: 22px 24px;
+  border-top: 1px solid rgba(29, 37, 35, .28);
+  border-bottom: 1px solid rgba(29, 37, 35, .28);
+  background: rgba(255, 255, 255, .35);
+}
+
+.event-intention span {
+  display: block;
+  margin-bottom: 12px;
+  color: #9a463b;
+  font-size: 12px;
+  letter-spacing: .16em;
+}
+
+.event-intention h4 {
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.event-intention p {
+  max-width: 780px;
+  margin-bottom: 10px;
 }
 
 .event-meta {
@@ -468,6 +497,77 @@ h1 {
 .value-grid h3 {
   margin: 34px 0 14px;
   font-size: 22px;
+}
+
+.kaburi {
+  background: rgba(255, 255, 255, .22);
+}
+
+.kaburi-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 38px;
+  max-width: 1080px;
+  margin-left: min(252px, 20vw);
+}
+
+.kaburi-lead {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.kaburi-lead p {
+  color: rgba(29, 37, 35, .82);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.kaburi-box {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid rgba(29, 37, 35, .28);
+  background: #f8f5ee;
+}
+
+.kaburi-box span {
+  display: block;
+  color: #9a463b;
+  font-size: 12px;
+  letter-spacing: .14em;
+}
+
+.kaburi-box strong {
+  display: block;
+  margin-top: 22px;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.kaburi-box p {
+  margin-top: 18px;
+  color: rgba(29, 37, 35, .72);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 1080px;
+  margin: 28px 0 0 min(252px, 20vw);
+}
+
+.theme-grid div {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-left: 3px solid #83643e;
+  background: rgba(255, 255, 255, .5);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .entry {
@@ -539,6 +639,9 @@ h1 {
   .event-card,
   .value-grid,
   .event-meta,
+  .kaburi-content,
+  .kaburi-lead,
+  .theme-grid,
   .entry {
     grid-template-columns: 1fr;
     margin-left: 0;
@@ -577,6 +680,15 @@ h1 {
   .event-takeaways,
   .event-topics {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .event-shift strong {
+    word-break: break-all;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .entry {
@@ -637,7 +749,6 @@ h1 {
 
   h2,
   h3,
-  p,
   dd {
     word-break: break-all;
   }
@@ -668,6 +779,10 @@ h1 {
   }
 
   .event-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-grid {
     grid-template-columns: 1fr;
   }
 
